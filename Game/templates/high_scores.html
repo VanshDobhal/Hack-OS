@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACK-OS: Breach Nexus - High Scores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/high_scores.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body class="high-scores-page">
+    <div class="container">
+        <header>
+            <h1>HACK-OS: <span class="neon-text">Breach Nexus</span></h1>
+            <h2>Hall of Fame</h2>
+        </header>
+
+        <main>
+            <section class="score-section">
+                <h3 class="section-title">Top Hackers</h3>
+                <div class="scores-container">
+                    <table class="scores-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Hacker</th>
+                                <th>Score</th>
+                                <th>Levels Completed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for score in overall_scores %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ score.alias }}</td>
+                                <td>{{ score.score }}</td>
+                                <td>{{ score.levels_completed }}</td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="4">No scores recorded yet. Be the first!</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="score-section">
+                <h3 class="section-title">Level Speedruns</h3>
+                
+                {% for level in levels_data %}
+                <div class="level-scores">
+                    <h4>Level {{ level.level_id }}: {{ level.title }}</h4>
+                    <table class="scores-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Hacker</th>
+                                <th>Time</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for score in level.scores %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ score.alias }}</td>
+                                <td>{{ score.completion_time }} seconds</td>
+                                <td>{{ score.date }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="no-scores">No level scores recorded yet. Complete levels to set records!</p>
+                {% endfor %}
+            </section>
+
+            <div class="action-buttons">
+                <a href="{{ url_for('game') }}" class="btn primary-btn">Return to Game</a>
+                <a href="{{ url_for('index') }}" class="btn secondary-btn">Main Menu</a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2087 HACK-OS Systems</p>
+                <p>A cyberpunk hacking simulation</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="glitch-overlay"></div>
+    <div class="scan-lines"></div>
+
+    <script src="{{ url_for('static', filename='js/effects.js') }}"></script>
+</body>
+</html>

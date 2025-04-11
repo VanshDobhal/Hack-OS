@@ -1,0 +1,68 @@
+Please update the existing web-based hacking simulation game on Replit with these changes:
+
+Condense Levels 1-5 into Levels 1-3: Combine the first five basic levels into three, increasing difficulty to cover essentials (navigation, decryption, permissions, hidden files, ports) in a challenging way.
+Scale Difficulty from Level 4: Redesign Levels 4-12 with progressively harder objectives beyond the basics.
+Glitch Behavior: Glitch offers hints only (e.g., “Something’s concealed—look harder”) via chat/help by default, providing clear solutions (e.g., “Type ‘ls -a’”) only when the user clicks a “Show Solution” button in each level’s UI (no need to type “I give up”).
+Level-Specific Guides: Each level has a unique guide (accessed via help) with instructions and command explanations, not solutions.
+Fix Password Cracking Terminal Response: Ensure the terminal in password cracking levels (e.g., Level 4) responds accurately—e.g., brute [guess] returns “Correct” if right, “Incorrect, try again” if wrong, and “Hint: [clue]” after 3 failed attempts, avoiding broken outputs.
+Updated Level Structure
+Level 1: System Exploration
+Objective: Navigate to /system/data/info using ls and cd, then read with cat.
+Glitch Hint: “Nexus’s system has depth—keep moving and check inside.”
+Guide: “‘ls’ lists directories, ‘cd [name]’ moves in, ‘cat [file]’ reads.”
+Show Solution Button: “Type ‘cd system’, then ‘cd data’, then ‘cat info’.”
+Level 2: Encrypted Access
+Objective: Decrypt “mjqqh” → “hello” (shift 3) with decrypt, unlock file with chmod 644.
+Glitch Hint: “Text’s scrambled, and it’s locked—shift it and adjust access.”
+Guide: “‘decrypt shift [number]’ unscrambles, ‘chmod [number]’ (e.g., 644) unlocks.”
+Show Solution Button: “Type ‘decrypt shift 3’, then ‘chmod 644’.”
+Level 3: Hidden Ports
+Objective: Find .key with ls -a, scan 6 ports with scan to find one open.
+Glitch Hint: “Nexus hides stuff, and its network’s tricky—search and probe.”
+Guide: “‘ls -a’ shows hidden files, ‘scan’ lists ports—find the open one.”
+Show Solution Button: “Type ‘ls -a’, then ‘scan’, select port 22.”
+Level 4: Password Challenge
+Objective: Crack “n3xus1” with brute (clue: “starts with n”).
+Glitch Hint: “Nexus locked this—guess smart with the hint.”
+Guide: “‘brute [guess]’ tests passwords. Terminal responds: ‘Correct’ (success), ‘Incorrect, try again’ (fail), ‘Hint: [clue]’ after 3 fails.”
+Show Solution Button: “Type ‘brute n3xus1’.”
+Level 5: Log Investigation
+Objective: Find attack time (e.g., “14:45”) in a 12-line log with analyze.
+Glitch Hint: “Logs hold Nexus’s secrets—look for when it struck.”
+Guide: “‘analyze’ parses logs. Check timestamps.”
+Show Solution Button: “Type ‘analyze’, check line 7.”
+Level 6: Firewall Breach
+Objective: Find a weak rule (e.g., “allow 8080”) with rules.
+Glitch Hint: “Nexus’s shield has a crack—find it.”
+Guide: “‘rules’ shows settings. Spot the flaw.”
+Show Solution Button: “Type ‘rules’, select port 8080.”
+Level 7: Multi-Layer Access
+Objective: Use ls -a, chmod 755, cat to access a nested, hidden file.
+Glitch Hint: “This one’s buried—permissions and hidden paths matter.”
+Guide: “‘ls -a’ for hidden, ‘chmod [number]’ for access, ‘cat [file]’ to read.”
+Show Solution Button: “Type ‘ls -a’, ‘chmod 755’, ‘cat secret’.”
+Level 8: Hex Decoding
+Objective: Decode “4E65787573” → “Nexus” with reverse.
+Glitch Hint: “Nexus’s code is scrambled—piece it together.”
+Guide: “‘reverse [hex]’ converts hex to text.”
+Show Solution Button: “Type ‘reverse 4E65787573’.”
+Level 9: Buffer Exploit
+Objective: Crash with a 25-character string using overflow.
+Glitch Hint: “Too much input breaks Nexus—flood it.”
+Guide: “‘overflow [string]’ sends data. Go big.”
+Show Solution Button: “Type ‘overflow aaaaaaaaaaaaaaaaaaaaaaaaa’.”
+Level 10: Network Assault
+Objective: Scan 10 ports (scan), crack a 7-character password (brute, clue: “includes x”).
+Glitch Hint: “Ports and a password—double trouble for Nexus.”
+Guide: “‘scan’ finds ports, ‘brute [guess]’ cracks passwords with correct responses.”
+Show Solution Button: “Type ‘scan’, then ‘brute nexusxx’.”
+Level 11: Advanced Reverse
+Objective: Decode “N41exus” → “Nexus” with reverse.
+Glitch Hint: “This code’s a mess—strip it down.”
+Guide: “‘reverse [string]’ decodes mixed input.”
+Show Solution Button: “Type ‘reverse N41exus’.”
+Level 12: Final Takedown
+Objective: Decrypt a key (decrypt), scan ports (scan), inject code (inject).
+Glitch Hint: “Everything you’ve got—crack it, scan it, end it.”
+Guide: “‘decrypt shift [number]’ for key, ‘scan’ for ports, ‘inject [code]’ to finish.”
+Show Solution Button: “Type ‘decrypt shift 5’, ‘scan’, ‘inject shutdown’.”

@@ -1,0 +1,127 @@
+/* High Scores specific styles */
+.high-scores-page {
+    color: #00ffcc;
+    background-color: #111;
+}
+
+.score-section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00ffcc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+.section-title {
+    color: #00ffcc;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #00ffcc;
+}
+
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.scores-table th,
+.scores-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+.scores-table th {
+    background-color: rgba(0, 255, 204, 0.1);
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.scores-table tr:hover {
+    background-color: rgba(0, 255, 204, 0.1);
+}
+
+.level-scores {
+    margin-bottom: 2rem;
+}
+
+.level-scores h4 {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid #00ffcc;
+    color: #fff;
+}
+
+.no-scores {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    padding: 1rem;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.action-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-buttons .primary-btn {
+    background-color: #00ffcc;
+    color: #111;
+}
+
+.action-buttons .primary-btn:hover {
+    background-color: #00e6b8;
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+.action-buttons .secondary-btn {
+    background-color: transparent;
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+}
+
+.action-buttons .secondary-btn:hover {
+    background-color: rgba(0, 255, 204, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .scores-table th,
+    .scores-table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-buttons .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+}

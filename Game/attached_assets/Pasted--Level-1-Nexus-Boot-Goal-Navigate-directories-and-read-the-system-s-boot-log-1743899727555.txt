@@ -1,0 +1,172 @@
+ 
+
+### 🔓 **Level 1: Nexus Boot**
+**🧠 Goal:** Navigate directories and read the system's boot log.
+
+**📖 Task:** Get into the `boot/system/core` directory and read `bootlog.txt`.
+
+**✅ Solution:**
+```bash
+cd boot
+cd system
+cd core
+cat bootlog.txt
+```
+
+---
+
+### 🔐 **Level 2: Cipher Shift**
+**🧠 Goal:** Decrypt a file and change its permissions.
+
+**📖 Task:** Decrypt `secret.enc`, fix permissions, and read it.
+
+**✅ Solution:**
+```bash
+decrypt secret.enc > secret.txt
+chmod +r secret.txt
+cat secret.txt
+```
+
+---
+
+### 🕵️‍♂️ **Level 3: Hidden Breadcrumbs**
+**🧠 Goal:** Find and open a hidden log file.
+
+**📖 Task:** Reveal hidden folders, find `.nexus/logs`, read `trace.log`.
+
+**✅ Solution:**
+```bash
+ls -a
+cd .nexus
+cd logs
+cat trace.log
+```
+
+---
+
+### 🔓 **Level 4: Password Brute**
+**🧠 Goal:** Crack the password using clues.
+
+**📖 Task:** Try passwords using the `brute` command until you find the right one.
+
+**✅ Solution (assuming the final password is `netron`):**
+```bash
+brute pass1
+brute hackme
+brute nexus
+brute netron
+```
+
+---
+
+### 🧾 **Level 5: Tampered Log**
+**🧠 Goal:** Detect and fix a corrupted log.
+
+**📖 Task:** Use analyzer to find the issue, fix it with a text editor.
+
+**✅ Solution:**
+```bash
+analyze corrupt.log
+nano corrupt.log   # Fix the bad line as per analyzer output
+cat corrupt.log    # Confirm it's fixed
+```
+
+---
+
+### 🔥 **Level 6: Exploit Firewall**
+**🧠 Goal:** Inject code through a weak firewall port.
+
+**📖 Task:** Identify open ports and inject code through the weak one.
+
+**✅ Solution:**
+```bash
+rules
+inject 8080 < payload.txt
+```
+
+---
+
+### 🧬 **Level 7: Multi-Step Chain**
+**🧠 Goal:** Perform chained actions to access a protected file.
+
+**📖 Task:** Navigate to folder, decrypt, fix permissions, read.
+
+**✅ Solution:**
+```bash
+cd .vault
+decrypt secret.sec > secret.txt
+chmod +r secret.txt
+cat secret.txt
+```
+
+---
+
+### 💻 **Level 8: Hex Trap**
+**🧠 Goal:** Decode hex and follow the path.
+
+**📖 Task:** Decode `6861636b`, go into folder, open the file.
+
+**✅ Solution:**
+```bash
+reverse 6861636b   # Output: hack
+cd hack
+cat note.txt
+```
+
+---
+
+### 💣 **Level 9: Buffer Overflow**
+**🧠 Goal:** Trigger buffer overflow and inject payload.
+
+**📖 Task:** Use overflow to reveal memory, then inject.
+
+**✅ Solution:**
+```bash
+overflow AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+# Output: Buffer breach at 0x7ffeab32
+inject 0x7ffeab32 < payload.txt
+```
+
+---
+
+### 🌐 **Level 10: Deep Net Scan**
+**🧠 Goal:** Decode hex from a scan and explore hidden node.
+
+**📖 Task:** Run deep scan, decode hex folder name, enter it.
+
+**✅ Solution:**
+```bash
+scan --deep
+reverse 6e65787573   # Output: nexus
+cd nexus
+cat intel.txt
+```
+
+---
+
+### 🧠 **Level 11: Reverse Patch**
+**🧠 Goal:** Fix a config file with obfuscated content.
+
+**📖 Task:** Decode gibberish value, edit the config file to fix.
+
+**✅ Solution:**
+```bash
+reverse 736572766572   # Output: server
+nano config.sys        # Replace wrong key with 'server'
+cat config.sys         # Verify it's patched
+```
+
+---
+
+### 🧨 **Level 12: Final Takedown**
+**🧠 Goal:** Decrypt key, scan ports, and inject shutdown payload.
+
+**📖 Task:** Crack `key.enc`, scan, inject final command.
+
+**✅ Solution:**
+```bash
+decrypt key.enc > key.txt
+scan
+inject 9090 < key.txt
+```
+

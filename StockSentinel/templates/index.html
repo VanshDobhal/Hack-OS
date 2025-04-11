@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACK-OS: Breach Nexus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="front-page">
+    <div class="scanlines"></div>
+    <div class="crt-glow"></div>
+    
+    <div class="container-fluid front-container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-8 text-center">
+                <div class="glitch-container">
+                    <h1 class="main-title glitch" data-text="HACK-OS: BREACH NEXUS">HACK-OS: BREACH NEXUS</h1>
+                </div>
+                <p class="tagline">Free cyberspace. Outsmart the AI.</p>
+                
+                <div class="mt-5 boot-sequence" id="bootSequence">
+                    <div class="boot-line">Initializing system...</div>
+                    <div class="boot-line">Loading HACK-OS v1.3...</div>
+                    <div class="boot-line">Establishing secure connection...</div>
+                    <div class="boot-line">Rerouting through proxy servers...</div>
+                    <div class="boot-line">Bypassing Nexus detection systems...</div>
+                    <div class="boot-line">Connection established.</div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button id="enterButton" class="neon-button mt-4">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        ENTER
+                    </button>
+                    
+                    <a href="{{ url_for('high_scores_page') }}" class="neon-link mt-3">
+                        <i class="bi bi-trophy"></i> High Scores
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Boot sequence animation
+            const bootLines = document.querySelectorAll('.boot-line');
+            
+            bootLines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.classList.add('visible');
+                    
+                    // Reveal the enter button after boot sequence
+                    if (index === bootLines.length - 1) {
+                        setTimeout(() => {
+                            document.getElementById('enterButton').style.opacity = '1';
+                        }, 500);
+                    }
+                }, index * 700);
+            });
+            
+            // Navigate to storyline on button click
+            document.getElementById('enterButton').addEventListener('click', function() {
+                window.location.href = '/storyline';
+            });
+        });
+    </script>
+</body>
+</html>
